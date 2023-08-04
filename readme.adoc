@@ -316,6 +316,10 @@ Updates the saturation on the current `FoxHSV` instance to the given value.
 --
 [cols="2h,2m,6a"]
 |===
+| `saturation`
+| float
+| New saturation value to set on the current `FoxHSV` instance.  This value MUST
+be a `float` value in the inclusive range `[0.0 -> 1.0]`.
 |===
 --
 
@@ -326,6 +330,10 @@ Updates the color value on the current `FoxHSV` instance to the given value.
 --
 [cols="2h,2m,6a"]
 |===
+| `value`
+| float
+| New color value to set on the current `FoxHSV` instance.  This value MUST be a
+`float` value in the inclusive range `[0.0 -> 1.0]`.
 |===
 --
 
