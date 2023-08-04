@@ -1,10 +1,12 @@
-= Color Utils
+= Ren'Py Color Utils
+:toc:
+:toclevels: 3
 
 Provides a set of classes that represent colors in RGB, HSL, and HSV, and can be
 converted between one-another freely.
 
 The classes included in this package are all prefixed with the word `Fox` to
-avoid conflict with other packages.
+avoid conflict with other packages or Ren'Py builtin types.
 
 == Usage
 
@@ -200,6 +202,10 @@ lightness.
 --
 [cols="2h,2m,6a"]
 |===
+| `alpha`
+| float
+| Alpha for the new `FoxHSL` instance.  Alpha values MUST be float values in the
+inclusive range `[0.0 -> 1.0]`.
 |===
 --
 
@@ -213,6 +219,25 @@ original saturation and alpha values.
 --
 [cols="2h,2m,6a"]
 |===
+| `hue`
+| int
+| Optional hue override for the new `FoxHSL` instance.  If unset, or set to
+`None`, the new `FoxHSL` will have the current instance's hue value.
+
+| `saturation`
+| float
+| Optional saturation override for the new `FoxHSL` instance.  If unset, or set
+to `None`, the new `FoxHSL` will have the current instance's saturation value.
+
+| `lightness`
+| float
+| Optional lightness override for the new `FoxHSL` instance.  If unset, or set
+to `None`, the new `FoxHSL` will have the current instance's lightness value.
+
+| `alpha`
+| float
+| Optional alpha override for the new `FoxHSL` instance.  If unset, or set to
+`None`, the new `FoxHSL` will have the curent instance's alpha value.
 |===
 --
 
@@ -277,6 +302,10 @@ Updates the hue on the current `FoxHSV` instance to the given value.
 --
 [cols="2h,2m,6a"]
 |===
+| `hue`
+| int
+| Hue for the new `FoxHSV` instance.  Hue values should be `int` values in the
+inclusive range `[0 -> 359]`.
 |===
 --
 
