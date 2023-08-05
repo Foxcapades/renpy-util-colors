@@ -18,6 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# From: https://github.com/Foxcapades/renpy-util-colors
+
 from fox_hex_utils_ren import fox_hex_to_ubytes, fox_ubytes_to_hex
 from fox_requirement_ren import fox_require_str
 

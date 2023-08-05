@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# From https://github.com/Foxcapades/renpy-util-requirement
+# From: https://github.com/Foxcapades/renpy-util-requirement
 
 """renpy
 init -25 python:
