@@ -1041,7 +1041,7 @@ class FoxRGB(FoxColor):
         h = 60 * ((h + 6) if h < 0 else h)
         s = c / v if v != 0 else 0
 
-        return h, s, v
+        return int(round(h)), s, v
 
     def _to_hsl(self) -> tuple[int, float, float]:
         r = self._r / 255
