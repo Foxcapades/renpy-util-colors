@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# From: https://github.com/Foxcapades/renpy-util-hex
+# From https://github.com/Foxcapades/renpy-util-hex
 
 from fox_requirement_ren import fox_enforce_int, fox_require_bool, fox_require_str
 
@@ -249,6 +249,23 @@ def fox_hex_to_int(value: str, prefix: str = '') -> int:
         i += 2
 
     return o
+
+
+def fox_hex_is_valid(hex: str) -> bool:
+    """
+    Tests if the given string is a valid hex string.  This assumes any prefixes
+    have been removed before testing.
+
+    :param hex: String to test.
+
+    :returns: Whether the given value was a valid hex string.
+    """
+    if not isinstance(hex, str):
+        return False
+
+    for c in hex:
+        if not __is_hex_digit(c):
+            return False
 
 
 ################################################################################
