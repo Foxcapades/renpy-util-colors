@@ -510,109 +510,168 @@ target `FoxRGB` instance.
 ===== Methods
 
 `set_red(red)`::
+Updates this `FoxRGB`'s red channel to the given value.
 +
 .Arguments
 --
 [cols="2h,2m,6a"]
 |===
+| `red`
+| int
+| The new red channel value to set on the current `FoxRGB` instance.  RGB values
+MUST be int values in the inclusive range `[0 -> 255]`.
 |===
 --
 
 `set_green(green)`::
+Updates this `FoxRGB`'s green channel to the given value.
 +
 .Arguments
 --
 [cols="2h,2m,6a"]
 |===
+| `green`
+| int
+| The new green channel value to set on the current `FoxRGB` instance. RGB
+values MUST be int values in the inclusive range `[0 -> 255]`.
 |===
 --
 
 `set_blue(blue)`::
+Updates this `FoxRGB`'s blue channel to the given value.
 +
 .Arguments
 --
 [cols="2h,2m,6a"]
 |===
+| `blue`
+| int
+| The new blue channel value to set on the current `FoxRGB` instance.  RGB
+values MUST be int values in the inclusive range `[0 -> 255]`.
 |===
 --
 
 `set_alpha(alpha)`::
+Updates this `FoxRGB`'s alpha channel to the given value.
 +
 .Arguments
 --
 [cols="2h,2m,6a"]
 |===
+| `alpha`
+| float
+| The new alpha channel value to set on the current `FoxRGB` instance.  Alpha
+values MUST be float values in the inclusive range `[0.0 -> 1.0]`.
 |===
 --
 
 `to_hsl()`::
-+
-.Arguments
---
-[cols="2h,2m,6a"]
-|===
-|===
---
 
 `to_hsv()`::
-+
-.Arguments
---
-[cols="2h,2m,6a"]
-|===
-|===
---
 
 `to_rgb()`::
-+
-.Arguments
---
-[cols="2h,2m,6a"]
-|===
-|===
---
 
 `with_red(red) : FoxRGB`::
+Creates a new `FoxRGB` instance with the given red value.
++
+The new value will have the same green, blue, and alpha values as the current
+`FoxRGB` instance.
 +
 .Arguments
 --
 [cols="2h,2m,6a"]
 |===
+| `red`
+| int
+| Red value for the new `FoxRGB` instance.  RGB values MUST be int values in the
+inclusive range `[0 -> 255]`.
 |===
 --
 
 `with_green(green) : FoxRGB`::
+Creates a new `FoxRGB` instance with the given green value.
++
+The new value will have the same red, blue, and alpha values as the current
+`FoxRGB` instance.
 +
 .Arguments
 --
 [cols="2h,2m,6a"]
 |===
+| `green`
+| int
+| Green value for the new `FoxRGB` instance.  RGB values MUST be int values in
+the inclusive range `[0 -> 255]`.
 |===
 --
 
 `with_blue(blue) : FoxRGB`::
+Creates a new `FoxRGB` instance with the given blue value.
++
+The new value will have the same red, green, and alpha values as the current
+`FoxRGB` instance.
 +
 .Arguments
 --
 [cols="2h,2m,6a"]
 |===
+| `blue`
+| int
+| Blue value for the new `FoxRGB` instance.  RGB values MUST be in values in the
+inclusive range `[0 -> 255]`.
 |===
 --
 
 `with_alpha(alpha) : FoxRGB`::
+Creates a new `FoxRGB` instance with the given alpha value.
++
+The new value will have the same red, green, and blue values as the current
+`FoxRGB` instance.
 +
 .Arguments
 --
 [cols="2h,2m,6a"]
 |===
+| `alpha`
+| float
+| Alpha value for the new `FoxRGB` instance.  Alpha values MUST be float values
+in the inclusive range `[0.0 -> 1.0]`.
 |===
 --
 
 `with_values(red?, green?, blue?, alpha?) : FoxRGB`::
+Creates a new `FoxRGB` instance with the given red, green, blue, and/or alpha
+value(s).
++
+Any values that are not set, or are set to `None` will be defaulted to the
+current `FoxRGB` instance's value for that property.
 +
 .Arguments
 --
 [cols="2h,2m,6a"]
 |===
+| `red`
+| int
+| Red value for the new `FoxRGB` instance.  RGB values MUST be int values in the
+inclusive range `[0 -> 255]`.  If unset, or set to `None`, the new instance will
+have the the current instance's red value.
+
+| `green`
+| int
+| Green value for the new `FoxRGB` instance.  RGB values MUST be int values in
+the inclusive range `[0 -> 255]`.  If unset, or set to `None`, the new instance
+will have the current instance's green value.
+
+| `blue`
+| int
+| Blue value for the new `FoxRGB` instance.  RGB values MUST be int values in
+the inclusive range `[0 -> 255]`.  If unset, or set to `None`, the new instance
+will have the current instance's blue value.
+
+| `alpha`
+| float
+| Alpha value for the new `FoxRGB` instance.  Alpha values MUST be float values
+in the inclusve range `[0.0 -> 1.0]`.  If unset, or set to `None`, the new
+instance will have the current instance's alpha value.
 |===
 --
