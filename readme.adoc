@@ -652,26 +652,26 @@ current `FoxRGB` instance's value for that property.
 |===
 | `red`
 | int
-| Red value for the new `FoxRGB` instance.  RGB values MUST be int values in the
-inclusive range `[0 -> 255]`.  If unset, or set to `None`, the new instance will
-have the the current instance's red value.
+| Optional red value for the new `FoxRGB` instance.  RGB values MUST be int
+values in the inclusive range `[0 -> 255]`.  If unset, or set to `None`, the new
+instance will have the the current instance's red value.
 
 | `green`
 | int
-| Green value for the new `FoxRGB` instance.  RGB values MUST be int values in
-the inclusive range `[0 -> 255]`.  If unset, or set to `None`, the new instance
-will have the current instance's green value.
+| Optional green value for the new `FoxRGB` instance.  RGB values MUST be int
+values in the inclusive range `[0 -> 255]`.  If unset, or set to `None`, the new
+instance will have the current instance's green value.
 
 | `blue`
 | int
-| Blue value for the new `FoxRGB` instance.  RGB values MUST be int values in
-the inclusive range `[0 -> 255]`.  If unset, or set to `None`, the new instance
-will have the current instance's blue value.
+| Optional blue value for the new `FoxRGB` instance.  RGB values MUST be int
+values in the inclusive range `[0 -> 255]`.  If unset, or set to `None`, the new
+instance will have the current instance's blue value.
 
 | `alpha`
 | float
-| Alpha value for the new `FoxRGB` instance.  Alpha values MUST be float values
-in the inclusve range `[0.0 -> 1.0]`.  If unset, or set to `None`, the new
-instance will have the current instance's alpha value.
+| Optional alpha value for the new `FoxRGB` instance.  Alpha values MUST be
+float values in the inclusve range `[0.0 -> 1.0]`.  If unset, or set to `None`,
+the new instance will have the current instance's alpha value.
 |===
 --
