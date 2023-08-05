@@ -344,6 +344,10 @@ Updates the alpha on the current `FoxHSV` instance to the given value.
 --
 [cols="2h,2m,6a"]
 |===
+| `alpha`
+| float
+| New alpha value to set on the current `FoxHSV` instance.  This value MUST be a
+`float` value in the inclusive range `[0.0 -> 1.0]`.
 |===
 --
 
@@ -359,6 +363,18 @@ Converts the current `FoxHSV` value into a `FoxRGB` value.
 `with_hue(hue) : FoxHSV`::
 Copies the target `FoxHSV` instance to a new `FoxHSV` instance with the given
 hue.
++
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `hue`
+| int
+| Hue value for the new `FoxHSV` instance.  Hue values should be ``int``s in the
+inclusive range `[0 -> 359]`.  If the given value falls outside of that range,
+it will be rotated back into that range, keeping the target hue selected.
+|===
+--
 
 `with_saturation(saturation) : FoxHSV`::
 Copies the target `FoxHSV` instance to a new `FoxHSV` instance with the given
@@ -368,6 +384,10 @@ saturation.
 --
 [cols="2h,2m,6a"]
 |===
+| `saturation`
+| float
+| Saturation value for the the new `FoxHSV` instance.  Saturation values MUST be
+``float``s in the inclusive range `[0.0 -> 1.0]`.
 |===
 --
 
@@ -379,10 +399,14 @@ color value.
 --
 [cols="2h,2m,6a"]
 |===
+| `value`
+| float
+| Color value for the new `FoxHSV` instance.  Saturation values MUST be
+``float``s in the inclusive range `[0.0 -> 1.0]`.
 |===
 --
 
-`with_alpha(value) : FoxHSV`::
+`with_alpha(alpha) : FoxHSV`::
 Copies the target `FoxHSV` instance to a new `FoxHSV` instance with the given
 alpha.
 +
@@ -390,6 +414,10 @@ alpha.
 --
 [cols="2h,2m,6a"]
 |===
+| `alpha`
+| float
+| Alpha for the new `FoxHSV` instance.  Saturation values MUST be ``float``s in
+the inclusive range `[0.0 -> 1.0]`.
 |===
 --
 
@@ -403,6 +431,26 @@ original saturation and alpha.
 --
 [cols="2h,2m,6a"]
 |===
+| `hue`
+| int
+| Optional hue override for the new `FoxHSV` instance.  If unset, or set to
+`None`, the new `FoxHSV` instance will have the current instance's hue.
+
+| `saturation`
+| float
+| Optional saturation override for the new `FoxHSV` instance.  If unset, or set
+to `None`, the new `FoxHSV` instance will have the current instance's
+saturation.
+
+| `value`
+| float
+| Optional value override for the new `FoxHSV` instance.  If unset, or set to
+`None`, the new `FoxHSV` instance will have the current instance's value.
+
+| `alpha`
+| float
+| Optional alpha override for the new `FoxHSV` instance.  If unset, or set to
+`None`, the new `FoxHSV` instance will have the current instance's alpha.
 |===
 --
 
