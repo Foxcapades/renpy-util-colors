@@ -242,7 +242,8 @@ falls outside of that range, an exception will be raised.
 [cols="2m,8a"]
 |===
 | FoxRGB
-|
+| A new FoxRGB instance with the set values or the values from the current
+instance depending on the given arguments.
 |===
 --
 
@@ -256,13 +257,15 @@ falls outside of that range, an exception will be raised.
 [#rgb-black]
 === `black(alpha?)`
 
+Creates a new, black `FoxRGB` instance, optionally with a given alpha value.
+
 .Arguments
 --
 [cols="2h,2m,6a"]
 |===
 | alpha
 | float
-|
+| Optional alpha value to set on the new, black `FoxRGB` instance.
 |===
 --
 
@@ -271,7 +274,7 @@ falls outside of that range, an exception will be raised.
 [cols="2m,8a"]
 |===
 | FoxRGB
-|
+| A new, black `FoxRGB` instance, optionally with the given alpha.
 |===
 --
 
@@ -279,13 +282,15 @@ falls outside of that range, an exception will be raised.
 [#rgb-white]
 === `white(alpha?)`
 
+Creates a new, white `FoxRGB` instance, optionally with a given alpha value.
+
 .Arguments
 --
 [cols="2h,2m,6a"]
 |===
 | alpha
 | float
-|
+| Optional alpha value to set on the new, white `FoxRGB` instance.
 |===
 --
 
@@ -294,7 +299,7 @@ falls outside of that range, an exception will be raised.
 [cols="2m,8a"]
 |===
 | FoxRGB
-|
+| A new, white `FoxRGB` instance, optionally with the given alpha.
 |===
 --
 
