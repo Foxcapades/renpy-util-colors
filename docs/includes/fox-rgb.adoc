@@ -134,7 +134,7 @@ exception will be raised.
 [cols="2m,8a"]
 |===
 | FoxRGB
-|
+| A new `FoxRGB` value with the given red value.
 |===
 --
 
@@ -159,7 +159,7 @@ exception will be raised.
 [cols="2m,8a"]
 |===
 | FoxRGB
-|
+| A new `FoxRGB` value with the given green value.
 |===
 --
 
@@ -184,7 +184,7 @@ exception will be raised.
 [cols="2m,8a"]
 |===
 | FoxRGB
-|
+| A new `FoxRGB` value with the given blue value.
 |===
 --
 
@@ -198,7 +198,9 @@ exception will be raised.
 |===
 | alpha
 | float
-|
+| Alpha value to set on the target `FoxRGB` instance.  This value MUST be a
+percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside of
+that range, an exception will be raised.
 |===
 --
 
@@ -207,7 +209,7 @@ exception will be raised.
 [cols="2m,8a"]
 |===
 | FoxRGB
-|
+| A new `FoxRGB` value with the given alpha.
 |===
 --
 
