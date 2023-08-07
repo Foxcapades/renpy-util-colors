@@ -21,6 +21,11 @@ Valid formats:
 * `#rrggbb`
 * `#rrggbbaa`
 
+[source, python]
+----
+color = hex_to_fox_rgb('#ffeeddcc')
+----
+
 .Arguments
 --
 [cols="2h,2m,6a"]
