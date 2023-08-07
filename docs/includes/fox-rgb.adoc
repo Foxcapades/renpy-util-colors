@@ -75,7 +75,9 @@ Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 |===
 | red
 | int
-|
+| New red channel value to set on the target `FoxRGB` instance.  This value MUST
+be an int in the inclusive range `[0 -> 255]`.  If it falls outside of that
+range, an exception will be raised.
 |===
 --
 
@@ -89,7 +91,9 @@ Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 |===
 | green
 | int
-|
+| New green channel value to set on the target `FoxRGB` instance.  This value
+MUST be an int in the inclusive range `[0 -> 255]`.  If it falls outside of that
+range, an exception will be raised.
 |===
 --
 
@@ -103,7 +107,9 @@ Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 |===
 | blue
 | int
-|
+| New blue channel value to set on the target `FoxRGB` instance.  This value
+MUST be an int in the inclusive range `[0 -> 255]`.  If it falls outside of that
+range, an exception will be raised.
 |===
 --
 
@@ -117,7 +123,9 @@ Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 |===
 | red
 | int
-|
+| Red value to set on the new `FoxRGB` instance.  This value should be an int in
+the inclusive range `[0 -> 255]`.  If it falls outside of that range, an
+exception will be raised.
 |===
 --
 
@@ -140,7 +148,9 @@ Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 |===
 | green
 | int
-|
+| Green value to set on the new `FoxRGB` instance.  This value should be an int
+in the inclusive range `[0 -> 255]`.  If it falls outside of that range, an
+exception will be raised.
 |===
 --
 
@@ -163,7 +173,9 @@ Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 |===
 | blue
 | int
-|
+| Blue value to set on the new `FoxRGB` instance.  This value should be an int
+in the inclusive range `[0 -> 255]`.  If it falls outside of that range, an
+exception will be raised.
 |===
 --
 
