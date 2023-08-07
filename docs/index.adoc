@@ -4,6 +4,42 @@
 
 == Functions
 
+=== `hex_to_fox_rgb(rgb_hex)`
+
+Hex to FoxRGB.  Coverts the given rgb_hex value into a FoxRGB instance by
+parsing the hex code into red, green, blue, and optionally alpha channels.
+
+If the given hex string is not a valid color hex string value in one of the
+following valid formats, an exception will be raised.  Note for each of the
+valid formats below, the actual hex digits will be replaced with `r`, `g`, `b`,
+or an optional `a` character.  In practice, valid hex digits will be expected.
+
+Valid formats:
+
+* '#rgb'
+* '#rgba'
+* '#rrggbb'
+* '#rrggbbaa'
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| rgb_hex
+| str
+| Hex color string to parse.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxRGB
+| A `FoxRGB` instance parsed from the given hex color string.
+|===
+--
+
 == Classes
 
 include::includes/fox-color.adoc[leveloffset=2]
