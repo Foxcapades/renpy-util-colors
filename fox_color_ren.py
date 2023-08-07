@@ -506,6 +506,16 @@ class FoxHSL(FoxColor):
     def tint(self, fraction: float) -> 'FoxHSL':
         return self.interpolate_hsl(FoxHSL(0, 0.0, 1.0, self._a), fraction)
 
+    #  Helpers  ################################################################
+
+    @staticmethod
+    def black(alpha: float = 1.0) -> 'FoxHSL':
+        return FoxHSL(0, 0.0, 0.0, alpha)
+
+    @staticmethod
+    def white(alpha: float = 1.0) -> 'FoxHSL':
+        return FoxHSL(0, 0.0, 1.0, alpha)
+
     # Creation Methods #########################################################
 
     def with_hue(self, hue: int) -> 'FoxHSL':
@@ -836,6 +846,16 @@ class FoxHSV(FoxColor):
         r, g, b = self._to_rgb()
         return FoxRGB(r, g, b, self._a)
 
+    #  Helpers  ################################################################
+
+    @staticmethod
+    def black(alpha: float = 1.0) -> 'FoxHSV':
+        return FoxHSV(0, 0.0, 0.0, alpha)
+
+    @staticmethod
+    def white(alpha: float = 1.0) -> 'FoxHSV':
+        return FoxHSV(0, 0.0, 1.0, alpha)
+
     # Copy Methods #############################################################
 
     def with_hue(self, hue: int) -> 'FoxHSV':
@@ -1120,6 +1140,16 @@ class FoxRGB(FoxColor):
 
     def tint(self, fraction: float) -> 'FoxRGB':
         return self.interpolate_rgb(FoxRGB(255, 255, 255, self._a), fraction)
+
+    #  Helpers  ################################################################
+
+    @staticmethod
+    def black(alpha: float = 1.0) -> 'FoxRGB':
+        return FoxRGB(0, 0, 0, alpha)
+
+    @staticmethod
+    def white(alpha: float = 1.0) -> 'FoxRGB':
+        return FoxRGB(255, 255, 255, alpha)
 
     # Creation Methods #########################################################
 
