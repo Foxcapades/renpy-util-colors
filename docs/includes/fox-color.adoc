@@ -526,7 +526,7 @@ Converts the target `FoxColor` into a Ren'Py `Color` instance.
 --
 [cols="2m,8a"]
 |===
-| `FoxRGB`
+| `Color`
 | A Ren'Py `Color` instance converted from the target `FoxColor`.
 |===
 --
