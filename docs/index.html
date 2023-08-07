@@ -3020,22 +3020,42 @@ an int in the inclusive range <code>[0 &#8594; 255]</code>.</p>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">red</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>int</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional red value override for the new <code>FoxRGB</code> instance.  If unset, or set
+to <code>None</code>, the new <code>FoxRGB</code> will have the target instance&#8217;s red value.  This
+value MUST be an int in the inclusive range <code>[0 &#8594; 255]</code>.  If it falls outside
+of that range, an exception will be raised.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">green</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>int</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional green value override for the new <code>FoxRGB</code> instance.  If unset, or set
+to <code>None</code>, the new <code>FoxRGB</code> will have the target instance&#8217;s green value.  This
+value MUST be an int in the inclusive range <code>[0 &#8594; 255]</code>.  If it falls outside
+of that range, an exception will be raised.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">blue</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>int</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional blue value override for the new <code>FoxRGB</code> instance.  If unset, or set
+to <code>None</code>, the new <code>FoxRGB</code> will have the target instance&#8217;s blue value.  This
+value MUST be an int in the inclusive range <code>[0 &#8594; 255]</code>.  If it falls outside
+of that range, an exception will be raised.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">alpha</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>float</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional alpha override for the new <code>FoxRGB</code> instance.  If unset, or set to
+<code>None</code>, the new <code>FoxRGB</code> will have the target instance&#8217;s alpha value.  This
+value MUST be a percent float in the inclusive range <code>[0.0 &#8594; 1.0]</code>.  If it
+falls outside of that range, an exception will be raised.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>

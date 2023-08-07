@@ -209,19 +209,31 @@ Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 |===
 | red
 | int
-|
+| Optional red value override for the new `FoxRGB` instance.  If unset, or set
+to `None`, the new `FoxRGB` will have the target instance's red value.  This
+value MUST be an int in the inclusive range `[0 -> 255]`.  If it falls outside
+of that range, an exception will be raised.
 
 | green
 | int
-|
+| Optional green value override for the new `FoxRGB` instance.  If unset, or set
+to `None`, the new `FoxRGB` will have the target instance's green value.  This
+value MUST be an int in the inclusive range `[0 -> 255]`.  If it falls outside
+of that range, an exception will be raised.
 
 | blue
 | int
-|
+| Optional blue value override for the new `FoxRGB` instance.  If unset, or set
+to `None`, the new `FoxRGB` will have the target instance's blue value.  This
+value MUST be an int in the inclusive range `[0 -> 255]`.  If it falls outside
+of that range, an exception will be raised.
 
 | alpha
 | float
-|
+| Optional alpha override for the new `FoxRGB` instance.  If unset, or set to
+`None`, the new `FoxRGB` will have the target instance's alpha value.  This
+value MUST be a percent float in the inclusive range `[0.0 -> 1.0]`.  If it
+falls outside of that range, an exception will be raised.
 |===
 --
 
