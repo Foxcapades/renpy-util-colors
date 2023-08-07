@@ -21,23 +21,23 @@ Initializes the new FoxHSL instance with the given arguments.
 --
 [cols="2h,2m,6a"]
 |===
-| `hue`
+| hue
 | int
 | Hue value as an int in the inclusive range `[0 -> 360]`.  If the given value
 falls outside of that range it will be rotated back into that range keeping the
 target hue selected.  This is to allow for over-rotations or negative rotations.
 
-| `saturation`
+| saturation
 | float
 | Saturation value as a percent float in the inclusive range `[0.0 -> 1.0]`.  If
 the given value falls outside of that range, an exception will be raised.
 
-| `lightness`
+| lightness
 | float
 | Lightness value as a percent float in the inclusive range `[0.0 -> 1.0]`.  If
 the given value falls outside of that range, an exception will be raised.
 
-| `alpha`
+| alpha
 | float
 | Optional alpha value as a percent float in the inclusive range `[0.0 -> 1.0]`.
 If the given value falls outside of that range, an exception will be raised.
@@ -142,7 +142,7 @@ Updates the target ``FoxHSL``'s hue to the given value.
 --
 [cols="2h,2m,6a"]
 |===
-| `hue`
+| hue
 | int
 | New hue value to set on the target `FoxHSL` instance.  This value should be an
 int in the inclusive range `[0 -> 360]`.  If it falls outside of that range, the
@@ -160,7 +160,7 @@ Updates the target ``FoxHSL``'s saturation to the given value.
 --
 [cols="2h,2m,6a"]
 |===
-| `saturation`
+| saturation
 | float
 | New saturation value to set on the target `FoxHSL` instance.  This value MUST
 be a percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside
@@ -178,7 +178,7 @@ Updates the target ``FoxHSL``'s lightness to the given value.
 --
 [cols="2h,2m,6a"]
 |===
-| `lightness`
+| lightness
 | float
 | New lightness value to set on the target `FoxHSL` instance.  This value MUST
 be a percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside
@@ -199,7 +199,7 @@ target `FoxHSL` instance.
 --
 [cols="2h,2m,6a"]
 |===
-| `hue`
+| hue
 | int
 | Hue value to set on the new `FoxHSL` instance.  This value should be an int in
 the inclusive range `[0 -> 360]`.  If it falls outside of that range, the value
@@ -229,7 +229,7 @@ The new value will have the same hue, lightness, and alpha values as the target
 --
 [cols="2h,2m,6a"]
 |===
-| `saturation`
+| saturation
 | float
 | Saturation value to set on the target `FoxHSL` instance.  This value MUST be a
 percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside of
@@ -259,7 +259,7 @@ The new value will have the same hue, saturation, and alpha values as the target
 --
 [cols="2h,2m,6a"]
 |===
-| `lightness`
+| lightness
 | float
 | Lightness value to set on the target `FoxHSL` instance.  This value MUST be a
 percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside of
@@ -289,7 +289,7 @@ target `FoxHSL` instance.
 --
 [cols="2h,2m,6a"]
 |===
-| `alpha`
+| alpha
 | float
 | Alpha value to set on the target `FoxHSL` instance.  This value MUST be a
 percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside of
@@ -320,7 +320,7 @@ target `FoxHSL` instance's value for that field.
 --
 [cols="2h,2m,6a"]
 |===
-| `hue`
+| hue
 | int
 | Optional hue override for the new `FoxHSL` instance.  If unset or set to
 `None`, the new `FoxHSL` will have the target instance's hue value.  This value
@@ -328,21 +328,21 @@ should be an int in the inclusive range `[0 -> 360]`.  If it falls outside of
 that range, the value will be rotated to be within that range, keeping selected
 hue.
 
-| `saturation`
+| saturation
 | float
 | Optional saturation override for the new `FoxHSL` instance.  If unset, or set
 to `None`, the new `FoxHSL` will have the target instance's saturation value.
 This value MUST be a percent float in the inclusive range `[0.0 -> 1.0]`.  If it
 falls outside of that range, an exception will be raised.
 
-| `lightness`
+| lightness
 | float
 | Optional lightness override for the new `FoxHSL` instance.  If unset, or set
 to `None`, the new `FoxHSL` will have the target instance's lightness value.
 This value MUST be a percent float in the inclusive range `[0.0 -> 1.0]`.  If it
 falls outside of that range, an exception will be raised.
 
-| `alpha`
+| alpha
 | float
 | Optional alpha override for the new `FoxHSL` instance.  If unset, or set to
 `None`, the new `FoxHSL` will have the target instance's alpha value.  This
@@ -377,7 +377,7 @@ Creates a new, black `FoxHSL` instance, optionally with a given alpha value.
 --
 [cols="2h,2m,6a"]
 |===
-| `alpha`
+| alpha
 | float
 | Optional alpha value to set on the new, black `FoxHSL` instance.
 |===
@@ -402,7 +402,7 @@ Creates a new, white `FoxHSL` instance, optionally with a given alpha value.
 --
 [cols="2h,2m,6a"]
 |===
-| `alpha`
+| alpha
 | float
 | Optional alpha value to set on the new, white `FoxHSL` instance.
 |===
@@ -427,7 +427,7 @@ Creates a new `FoxHSL` instance from the given Ren'Py `Color` instance.
 --
 [cols="2h,2m,6a"]
 |===
-| `color`
+| color
 | Color
 | Ren'Py `Color` instance from which the new `FoxHSL` should be created.
 |===
