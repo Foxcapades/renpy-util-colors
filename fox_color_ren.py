@@ -22,6 +22,7 @@
 
 from fox_hex_utils_ren import fox_hex_to_ubytes, fox_ubytes_to_hex
 from fox_requirement_ren import fox_require_str
+from renpy import Color  # type: ignore
 
 """renpy
 init -2 python:
@@ -336,9 +337,18 @@ class FoxColor(object):
         """
         Converts the current color to a FoxHSV instance.  If the color was
         already a FoxHSV instance, that instance will be returned.
-        :return:
+
+        :return: A FoxHSV instance converted from this color.
         """
         raise Exception('to_hsv not yet implemented')
+
+    def to_renpy_color(self) -> Color:
+        """
+        Converts the current color to a Ren'Py Color instance.
+
+        :return: A Ren'Py Color instance converted from this FoxColor.
+        """
+        raise Exception('to_renpy_color not yet implemented')
 
     #  INTERNALS  ##############################################################
 
@@ -515,6 +525,9 @@ class FoxHSL(FoxColor):
     def to_hsv(self) -> 'FoxHSV':
         h, s, v = self._to_hsv()
         return FoxHSV(h, s, v, self._a)
+
+    def to_renpy_color(self) -> Color:
+        return Color(hls=(self._h, self._l, self._s), alpha=self._a)
 
     # Rotation Methods #########################################################
 
@@ -878,6 +891,9 @@ class FoxHSV(FoxColor):
         r, g, b = self._to_rgb()
         return FoxRGB(r, g, b, self._a)
 
+    def to_renpy_color(self) -> Color:
+        return Color(hsv=(self._h, self._s, self._v), alpha=self._a)
+
     #  Helpers  ################################################################
 
     @staticmethod
@@ -1154,6 +1170,9 @@ class FoxRGB(FoxColor):
     def to_hsv(self) -> FoxHSV:
         h, s, v = self._to_hsv()
         return FoxHSV(h, s, v, self._a)
+
+    def to_renpy_color(self) -> Color:
+        return Color(rgb=(self._r, self._g, self._b), alpha=self._a)
 
     # Rotation Methods #########################################################
 
