@@ -1,4 +1,5 @@
 = `FoxColor`
+:source-highlighter: highlight.js
 
 The base class on which all `FoxColor` types are built.
 

@@ -1,5 +1,6 @@
 = Color Utils Documentation
 :toc: left
+:source-highlighter: highlight.js
 
 == Functions
 

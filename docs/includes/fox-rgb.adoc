@@ -1,4 +1,5 @@
 = `FoxRGB`
+:source-highlighter: highlight.js
 
 == Construction
 

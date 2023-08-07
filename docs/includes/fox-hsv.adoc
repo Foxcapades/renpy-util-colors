@@ -1,4 +1,5 @@
 = `FoxHSV`
+:source-highlighter: highlight.js
 
 == Construction
 
