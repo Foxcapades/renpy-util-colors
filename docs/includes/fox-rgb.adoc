@@ -313,7 +313,7 @@ Creates a new, white `FoxRGB` instance, optionally with a given alpha value.
 |===
 | color
 | Color
-|
+| Ren'Py `Color` instance from which the new `FoxRGB` should be created.
 |===
 --
 
@@ -322,6 +322,6 @@ Creates a new, white `FoxRGB` instance, optionally with a given alpha value.
 [cols="2m,8a"]
 |===
 | FoxRGB
-|
+| A new `FoxRGB` instance from the given Ren'Py `Color` instance.
 |===
 --
