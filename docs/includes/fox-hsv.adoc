@@ -68,7 +68,7 @@ the inclusive range `[0.0 -> 1.0]`.
 --
 [cols="2h,2m,6a"]
 |===
-| `hue`
+| hue
 | int
 | New hue value to set on the target `FoxHSV` instance. This value should be an
 int in the inclusive range `[0 → 360]`. If it falls outside of that range, the
@@ -84,7 +84,7 @@ value will be rotated to be within that range, keeping selected hue.
 --
 [cols="2h,2m,6a"]
 |===
-| `saturation`
+| saturation
 | float
 | New saturation value to set on the target `FoxHSV` instance.  This value MUST
 be a percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside
@@ -100,7 +100,7 @@ of that range, an exception will be raised.
 --
 [cols="2h,2m,6a"]
 |===
-| `value`
+| value
 | float
 | New color value to set on the target `FoxHSV` instance.  This value MUST be a
 percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside of
@@ -139,7 +139,7 @@ that range, an exception will be raised.
 --
 [cols="2h,2m,6a"]
 |===
-| `saturation`
+| saturation
 | float
 |
 |===
@@ -162,7 +162,7 @@ that range, an exception will be raised.
 --
 [cols="2h,2m,6a"]
 |===
-| `value`
+| value
 | float
 |
 |===
@@ -185,7 +185,7 @@ that range, an exception will be raised.
 --
 [cols="2h,2m,6a"]
 |===
-| `alpha`
+| alpha
 | float
 |
 |===
@@ -208,19 +208,19 @@ that range, an exception will be raised.
 --
 [cols="2h,2m,6a"]
 |===
-| `hue`
+| hue
 | int
 |
 
-| `saturation`
+| saturation
 | float
 |
 
-| `value`
+| value
 | float
 |
 
-| `alpha`
+| alpha
 | float
 |
 |===
@@ -249,7 +249,7 @@ that range, an exception will be raised.
 --
 [cols="2h,2m,6a"]
 |===
-| `alpha`
+| alpha
 | float
 |
 |===
@@ -272,7 +272,7 @@ that range, an exception will be raised.
 --
 [cols="2h,2m,6a"]
 |===
-| `alpha`
+| alpha
 | float
 |
 |===
@@ -295,7 +295,7 @@ that range, an exception will be raised.
 --
 [cols="2h,2m,6a"]
 |===
-| `color`
+| color
 | Color
 |
 |===

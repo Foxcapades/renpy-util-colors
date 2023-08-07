@@ -16,6 +16,9 @@
 --
 [cols="2m,8a"]
 |===
+| int
+| The red channel value for the target `FoxRGB` instance.  This value will be an
+int in the inclusive range `[0 -> 255]`.
 |===
 --
 
@@ -27,6 +30,9 @@
 --
 [cols="2m,8a"]
 |===
+| int
+| The green channel value for the target `FoxRGB` instance.  This value will be
+an int in the inclusive range `[0 -> 255]`.
 |===
 --
 
@@ -38,6 +44,9 @@
 --
 [cols="2m,8a"]
 |===
+| int
+| The blue channel value for the target `FoxRGB` instance.  This value will be
+an int in the inclusive range `[0 -> 255]`.
 |===
 --
 
@@ -60,13 +69,9 @@
 --
 [cols="2h,2m,6a"]
 |===
-|===
---
-
-.Returns
---
-[cols="2m,8a"]
-|===
+| red
+| int
+|
 |===
 --
 
@@ -78,13 +83,9 @@
 --
 [cols="2h,2m,6a"]
 |===
-|===
---
-
-.Returns
---
-[cols="2m,8a"]
-|===
+| green
+| int
+|
 |===
 --
 
@@ -96,13 +97,9 @@
 --
 [cols="2h,2m,6a"]
 |===
-|===
---
-
-.Returns
---
-[cols="2m,8a"]
-|===
+| blue
+| int
+|
 |===
 --
 
@@ -114,6 +111,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| red
+| int
+|
 |===
 --
 
@@ -121,6 +121,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxRGB
+|
 |===
 --
 
@@ -132,6 +134,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| green
+| int
+|
 |===
 --
 
@@ -139,6 +144,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxRGB
+|
 |===
 --
 
@@ -150,6 +157,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| blue
+| int
+|
 |===
 --
 
@@ -157,6 +167,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxRGB
+|
 |===
 --
 
@@ -168,6 +180,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| alpha
+| float
+|
 |===
 --
 
@@ -175,6 +190,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxRGB
+|
 |===
 --
 
@@ -186,6 +203,21 @@
 --
 [cols="2h,2m,6a"]
 |===
+| red
+| int
+|
+
+| green
+| int
+|
+
+| blue
+| int
+|
+
+| alpha
+| float
+|
 |===
 --
 
@@ -193,6 +225,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxRGB
+|
 |===
 --
 
@@ -210,6 +244,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| alpha
+| float
+|
 |===
 --
 
@@ -217,6 +254,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxRGB
+|
 |===
 --
 
@@ -228,6 +267,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| alpha
+| float
+|
 |===
 --
 
@@ -235,6 +277,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxRGB
+|
 |===
 --
 
@@ -246,6 +290,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| color
+| Color
+|
 |===
 --
 
@@ -253,6 +300,7 @@
 --
 [cols="2m,8a"]
 |===
+| FoxRGB
+|
 |===
 --
-
