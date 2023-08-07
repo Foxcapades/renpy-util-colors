@@ -5,6 +5,8 @@
 
 == Properties
 
+Includes all properties from <<fox-color-props,`FoxColor`>>.
+
 * <<hsv-hue>>
 * <<hsv-saturation>>
 * <<hsv-value>>
@@ -52,6 +54,8 @@ the inclusive range `[0.0 -> 1.0]`.
 
 
 == Instance Methods
+
+Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 
 * <<hsv-set-hue>>
 * <<hsv-set-saturation>>
