@@ -16,6 +16,9 @@
 --
 [cols="2m,8a"]
 |===
+| int
+| The target ``FoxHSV``'s hue value.  This value will be an int in the inclusive
+range `[0 -> 360]`.
 |===
 --
 
@@ -27,6 +30,9 @@
 --
 [cols="2m,8a"]
 |===
+| float
+| The target ``FoxHSV``'s saturation value.  This value will be a percent float
+in the inclusive range `[0.0 -> 1.0]`.
 |===
 --
 
@@ -38,6 +44,9 @@
 --
 [cols="2m,8a"]
 |===
+| float
+| The target ``FoxHSV``'s color value.  This value will be a percent float in
+the inclusive range `[0.0 -> 1.0]`.
 |===
 --
 
@@ -59,13 +68,11 @@
 --
 [cols="2h,2m,6a"]
 |===
-|===
---
-
-.Returns
---
-[cols="2m,8a"]
-|===
+| `hue`
+| int
+| New hue value to set on the target `FoxHSV` instance. This value should be an
+int in the inclusive range `[0 → 360]`. If it falls outside of that range, the
+value will be rotated to be within that range, keeping selected hue.
 |===
 --
 
@@ -77,13 +84,11 @@
 --
 [cols="2h,2m,6a"]
 |===
-|===
---
-
-.Returns
---
-[cols="2m,8a"]
-|===
+| `saturation`
+| float
+| New saturation value to set on the target `FoxHSV` instance.  This value MUST
+be a percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside
+of that range, an exception will be raised.
 |===
 --
 
@@ -95,13 +100,11 @@
 --
 [cols="2h,2m,6a"]
 |===
-|===
---
-
-.Returns
---
-[cols="2m,8a"]
-|===
+| `value`
+| float
+| New color value to set on the target `FoxHSV` instance.  This value MUST be a
+percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside of
+that range, an exception will be raised.
 |===
 --
 
@@ -113,6 +116,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| hue
+| int
+|
 |===
 --
 
@@ -120,6 +126,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxHSV
+|
 |===
 --
 
@@ -131,6 +139,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| `saturation`
+| float
+|
 |===
 --
 
@@ -138,6 +149,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxHSV
+|
 |===
 --
 
@@ -149,6 +162,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| `value`
+| float
+|
 |===
 --
 
@@ -156,6 +172,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxHSV
+|
 |===
 --
 
@@ -167,6 +185,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| `alpha`
+| float
+|
 |===
 --
 
@@ -174,6 +195,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxHSV
+|
 |===
 --
 
@@ -185,6 +208,21 @@
 --
 [cols="2h,2m,6a"]
 |===
+| `hue`
+| int
+|
+
+| `saturation`
+| float
+|
+
+| `value`
+| float
+|
+
+| `alpha`
+| float
+|
 |===
 --
 
@@ -192,6 +230,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxHSV
+|
 |===
 --
 
@@ -209,6 +249,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| `alpha`
+| float
+|
 |===
 --
 
@@ -216,6 +259,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxHSV
+|
 |===
 --
 
@@ -227,6 +272,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| `alpha`
+| float
+|
 |===
 --
 
@@ -234,6 +282,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxHSV
+|
 |===
 --
 
@@ -245,6 +295,9 @@
 --
 [cols="2h,2m,6a"]
 |===
+| `color`
+| Color
+|
 |===
 --
 
@@ -252,6 +305,8 @@
 --
 [cols="2m,8a"]
 |===
+| FoxHSV
+|
 |===
 --
 
