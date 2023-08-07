@@ -353,6 +353,15 @@ class FoxColor(object):
     #  INTERNALS  ##############################################################
 
     @staticmethod
+    def _clamp_percent(value: float) -> float:
+        if value > 1.0:
+            return 1.0
+        elif value < 0.0:
+            return 0.0
+        else:
+            return value
+
+    @staticmethod
     def _interpolate(x: int | float, y: int | float, z: float) -> int | float:
         return type(x)(x + (y - x) * z)
 
@@ -425,6 +434,49 @@ class FoxHSL(FoxColor):
             and other._s == self._s
             and other._l == self._l
             and other._a == self._a)
+
+    def __add__(self, other) -> 'FoxHSL':
+        if not isinstance(other, FoxHSL):
+            raise Exception('can only add FoxHSL instances to other FoxHSL instances.')
+
+        return FoxHSL(
+            self._fix_hue(self._h + other._h),
+            self._clamp_percent(self._s + other._s),
+            self._clamp_percent(self._l + other._l),
+            self._clamp_percent(self._a + other._a),
+        )
+
+    __radd__ = __add__
+
+    def __sub__(self, other) -> 'FoxHSL':
+        if not isinstance(other, FoxHSL):
+            raise Exception('can only subtract FoxHSL instances from other FoxHSL instances')
+
+        return FoxHSL(
+            self._fix_hue(self._h - other._h),
+            self._clamp_percent(self._s - other._s),
+            self._clamp_percent(self._v - other._v),
+            self._clamp_percent(self._a - other._a),
+        )
+
+    def __rsub__(self, other) -> 'FoxHSL':
+        if not isinstance(other, FoxHSL):
+            raise Exception('can only subtract FoxHSL instances from other FoxHSL instances')
+
+        return other - self
+
+    def __mul__(self, other) -> 'FoxHSL':
+        if not isinstance(other, FoxHSL):
+            raise Exception('can only multiply FoxHSL instances with other FoxHSL instances')
+
+        return FoxHSL(
+            self._fix_hue(self._h * other._h),
+            self._clamp_percent(self._s * other._s),
+            self._clamp_percent(self._v * other._v),
+            self._clamp_percent(self._a * other._a),
+        )
+
+    __rmul__ = __mul__
 
     # Hue ######################################################################
 
@@ -772,6 +824,49 @@ class FoxHSV(FoxColor):
             and other._a == self._a
         )
 
+    def __add__(self, other) -> 'FoxHSV':
+        if not isinstance(other, FoxHSV):
+            raise Exception('can only add FoxHSV instances to other FoxHSV instances')
+
+        return FoxHSV(
+            self._fix_hue(self._h + other._h),
+            self._clamp_percent(self._s + other._s),
+            self._clamp_percent(self._v + other._v),
+            self._clamp_percent(self._a + other._a),
+        )
+
+    __radd__ = __add__
+
+    def __sub__(self, other) -> 'FoxHSV':
+        if not isinstance(other, FoxHSV):
+            raise Exception('can only subtract FoxHSV instances from other FoxHSV instances')
+
+        return FoxHSV(
+            self._fix_hue(self._h - other._h),
+            self._clamp_percent(self._s - other._s),
+            self._clamp_percent(self._v - other._v),
+            self._clamp_percent(self._a - other._a),
+        )
+
+    def __rsub__(self, other) -> 'FoxHSV':
+        if not isinstance(other, FoxHSV):
+            raise Exception('can only subtract FoxHSV instances from other FoxHSV instances')
+
+        return other - self
+
+    def __mul__(self, other) -> 'FoxHSV':
+        if not isinstance(other, FoxHSV):
+            raise Exception('can only multiply FoxHSV instances with other FoxHSV instances')
+
+        return FoxHSV(
+            self._fix_hue(self._h * other._h),
+            self._clamp_percent(self._s * other._s),
+            self._clamp_percent(self._v * other._v),
+            self._clamp_percent(self._a * other._a),
+        )
+
+    __rmul__ = __mul__
+
     # Hue ######################################################################
 
     @property
@@ -868,6 +963,7 @@ class FoxHSV(FoxColor):
     def rotate_hue_by_degrees(self, degrees: int) -> 'FoxHSV':
         self._require_numeric('degrees', degrees)
         return FoxHSV(self._h + degrees, self._s, self._v, self._a)
+
     # Interpolation ############################################################
 
     def shade(self, fraction: float) -> 'FoxHSV':
@@ -1073,6 +1169,49 @@ class FoxRGB(FoxColor):
             and other._b == self._b
             and other._a == self._a
         )
+
+    def __add__(self, other) -> 'FoxRGB':
+        if not isinstance(other, FoxRGB):
+            raise Exception('can only add FoxRGB instances to other FoxRGB instances')
+
+        return FoxRGB(
+            self._clamp_rgb(self._r + other._r),
+            self._clamp_rgb(self._g + other._g),
+            self._clamp_rgb(self._b + other._b),
+            self._clamp_percent(self._a + other._a)
+        )
+
+    __radd__ = __add__
+
+    def __sub__(self, other) -> 'FoxRGB':
+        if not isinstance(other, FoxRGB):
+            raise Exception('can only subtract FoxRGB instances from other FoxRGB instances')
+
+        return FoxRGB(
+            self._clamp_rgb(self._r - other._r),
+            self._clamp_rgb(self._g - other._g),
+            self._clamp_rgb(self._b - other._b),
+            self._clamp_percent(self._a - other._a)
+        )
+
+    def __rsub__(self, other) -> 'FoxRGB':
+        if not isinstance(other, FoxRGB):
+            raise Exception('can only subtract FoxRGB instances from other FoxRGB instances')
+
+        return other - self
+
+    def __mul__(self, other) -> 'FoxRGB':
+        if not isinstance(other, FoxRGB):
+            raise Exception('can only multiply FoxRGB instances with other FoxRGB instances')
+
+        return FoxRGB(
+            self._clamp_rgb(self._r * other._r),
+            self._clamp_rgb(self._g * other._g),
+            self._clamp_rgb(self._b * other._b),
+            self._clamp_percent(self._a * other._a)
+        )
+
+    __rmul__ = __mul__
 
     # Red ######################################################################
 
@@ -1298,6 +1437,15 @@ class FoxRGB(FoxColor):
         return FoxRGB(r, g, b, a)
 
     # Internal Methods #########################################################
+
+    @staticmethod
+    def _clamp_rgb(value: int) -> int:
+        if value > 255:
+            return 255
+        elif value < 0:
+            return 0
+        else:
+            return value
 
     def _to_hsv(self) -> tuple[int, float, float]:
         r = self._r / 255
