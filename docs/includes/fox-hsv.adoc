@@ -5,6 +5,79 @@
 
 == Properties
 
+* <<hsv-hue>>
+* <<hsv-saturation>>
+* <<hsv-value>>
+
+[#hsv-hue]
+=== `hue`
+
+[#hsv-saturation]
+=== `saturation`
+
+[#hsv-value]
+=== `value`
+
 == Instance Methods
 
+* <<hsv-set-hue>>
+* <<hsv-set-saturation>>
+* <<hsv-set-lightness>>
+* <<hsv-with-hue>>
+* <<hsv-with-saturation>>
+* <<hsv-with-alpha>>
+* <<hsv-with-values>>
+
+[#hsv-set-hue]
+=== `set_hue(hue)`
+
+[#hsv-set-saturation]
+=== `set_saturation(saturation)`
+
+[#hsv-set-lightness]
+=== `set_lightness(lightness)`
+
+[#hsv-with-hue]
+=== `with_hue(hue)`
+
+[#hsv-with-saturation]
+=== `with_saturation(saturation)`
+
+[#hsv-with-value]
+=== `with_value(value)`
+
+[#hsv-with-alpha]
+=== `with_alpha(alpha)`
+
+[#hsv-with-values]
+=== `with_values(hue?, saturation?, value?, alpha?)`
+
 == Static Methods
+
+* <<hsv-black>>
+* <<hsv-white>>
+* <<hsv-from-renpy>>
+
+[#hsv-black]
+=== `black(alpha?)`
+
+[#hsv-white]
+=== `white(alpha?)`
+
+[#hsv-from-renpy]
+=== `from_renpy_color(color)`
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+

@@ -59,13 +59,64 @@ Includes all properties from <<fox-color-props,`FoxColor`>>.
 [#hsl-hue]
 === `hue`
 
+The current `FoxHSL` instance's hue value.
+
+[source, python]
+----
+some_variable = color.hue
+----
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| int
+| The target ``FoxHSL``'s hue value.  This value will be an int in the inclusive
+range `[0 -> 360]`.
+|===
+--
+
 
 [#hsl-sat]
 === `saturation`
 
+The current `FoxHSL` instance's saturation value.
+
+[source, python]
+----
+some_variable = color.saturation
+----
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| float
+| The target ``FoxHSL``'s saturation value.  This value will be a percent float
+in the inclusive range `[0.0 -> 1.0]`.
+|===
+--
+
 
 [#hsl-lig]
 === `lightness`
+
+The current `FoxHSL` instance's lightness value.
+
+[source, python]
+----
+some_variable = color.lightness
+----
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| float
+| The target ``FoxHSL``'s lightness value.  This value will be a percent float
+in the inclusive range `[0.0 -> 1.0]`.
+|===
+--
 
 
 == Instance Methods
@@ -103,52 +154,56 @@ value will be rotated to be within that range, keeping selected hue.
 [#hsl-set-sat]
 === `set_saturation(saturation)`
 
-
-[#hsl-set-lig]
-=== `set_lightness(lightness)`
-
-
-[#hsl-with-hue]
-=== `with_hue(hue)`
-
-
-[#hsl-with-saturation]
-=== `with_saturation(saturation)`
-
-
-[#hsl-with-lightness]
-=== `with_lightness(lightness)`
-
-
-[#hsl-with-alpha]
-=== `with_alpha(alpha)`
-
-
-[#hsl-with-values]
-=== `with_values(hue?, saturation?, lightness?, alpha?)`
-
-
-== Static Methods
-
-* <<hsl-black>>
-* <<hsl-white>>
-
-[#hsl-black]
-=== `black(alpha?)`
-
-Creates a new, black `FoxHSL` instance, optionally with a given alpha value.
-
-
-[#hsl-white]
-=== `white(alpha?)`
-
-Creates a new, white `FoxHSL` instance, optionally with a given alpha value.
-
+Updates the target ``FoxHSL``'s saturation to the given value.
 
 .Arguments
 --
 [cols="2h,2m,6a"]
 |===
+| `saturation`
+| float
+| New saturation value to set on the target `FoxHSL` instance.  This value MUST
+be a percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside
+of that range, an exception will be raised.
+|===
+--
+
+
+[#hsl-set-lig]
+=== `set_lightness(lightness)`
+
+Updates the target ``FoxHSL``'s lightness to the given value.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `lightness`
+| float
+| New lightness value to set on the target `FoxHSL` instance.  This value MUST
+be a percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside
+of that range, an exception will be raised.
+|===
+--
+
+
+[#hsl-with-hue]
+=== `with_hue(hue)`
+
+Creates a new `FoxHSL` value with the given hue.
+
+The new value will have the same saturation, lightness, and alpha values as the
+target `FoxHSL` instance.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `hue`
+| int
+| Hue value to set on the new `FoxHSL` instance.  This value should be an int in
+the inclusive range `[0 -> 360]`.  If it falls outside of that range, the value
+will be rotated to be within that range, keeping selected hue.
 |===
 --
 
@@ -156,6 +211,233 @@ Creates a new, white `FoxHSL` instance, optionally with a given alpha value.
 --
 [cols="2m,8a"]
 |===
+| FoxHSL
+| A new `FoxHSL` value with the given hue.
 |===
 --
 
+
+[#hsl-with-saturation]
+=== `with_saturation(saturation)`
+
+Creates a new `FoxHSL` value with the given saturation.
+
+The new value will have the same hue, lightness, and alpha values as the target
+`FoxHSL` instance.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `saturation`
+| float
+| Saturation value to set on the target `FoxHSL` instance.  This value MUST be a
+percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside of
+that range, an exception will be raised.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSL
+| A new `FoxHSL` value with the given saturation.
+|===
+--
+
+
+[#hsl-with-lightness]
+=== `with_lightness(lightness)`
+
+Creates a new `FoxHSL` value with the given lightness.
+
+The new value will have the same hue, saturation, and alpha values as the target
+`FoxHSL` instance.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `lightness`
+| float
+| Lightness value to set on the target `FoxHSL` instance.  This value MUST be a
+percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside of
+that range, an exception will be raised.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSL
+| A new `FoxHSL` value with the given lightness.
+|===
+--
+
+
+[#hsl-with-alpha]
+=== `with_alpha(alpha)`
+
+Creates a new `FoxHSL` value with the given alpha.
+
+The new value will have the same hue, lightness, and lightness values as the
+target `FoxHSL` instance.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `alpha`
+| float
+| Alpha value to set on the target `FoxHSL` instance.  This value MUST be a
+percent float in the inclusive range `[0.0 -> 1.0]`.  If it falls outside of
+that range, an exception will be raised.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSL
+| A new `FoxHSL` value with the given alpha.
+|===
+--
+
+
+[#hsl-with-values]
+=== `with_values(hue?, saturation?, lightness?, alpha?)`
+
+Creates a new `FoxHSL` value with the given hue, saturation, lightness, and/or
+alpha value(s).
+
+Any values that are not set, or are set to `None` will be defaulted to the
+target `FoxHSL` instance's value for that field.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `hue`
+| int
+| Optional hue override for the new `FoxHSL` instance.  If unset or set to
+`None`, the new `FoxHSL` will have the target instance's hue value.  This value
+should be an int in the inclusive range `[0 -> 360]`.  If it falls outside of
+that range, the value will be rotated to be within that range, keeping selected
+hue.
+
+| `saturation`
+| float
+| Optional saturation override for the new `FoxHSL` instance.  If unset, or set
+to `None`, the new `FoxHSL` will have the target instance's saturation value.
+This value MUST be a percent float in the inclusive range `[0.0 -> 1.0]`.  If it
+falls outside of that range, an exception will be raised.
+
+| `lightness`
+| float
+| Optional lightness override for the new `FoxHSL` instance.  If unset, or set
+to `None`, the new `FoxHSL` will have the target instance's lightness value.
+This value MUST be a percent float in the inclusive range `[0.0 -> 1.0]`.  If it
+falls outside of that range, an exception will be raised.
+
+| `alpha`
+| float
+| Optional alpha override for the new `FoxHSL` instance.  If unset, or set to
+`None`, the new `FoxHSL` will have the target instance's alpha value.  This
+value MUST be a percent float in the inclusive range `[0.0 -> 1.0]`.  If it
+falls outside of that range, an exception will be raised.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSL
+| A new FoxHSL instance with the set values or the values from the current
+instance depending on the given arguments.
+|===
+--
+
+
+== Static Methods
+
+* <<hsl-black>>
+* <<hsl-white>>
+* <<hsl-from-renpy>>
+
+[#hsl-black]
+=== `black(alpha?)`
+
+Creates a new, black `FoxHSL` instance, optionally with a given alpha value.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `alpha`
+| float
+| Optional alpha value to set on the new, black `FoxHSL` instance.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSL
+| A new, black `FoxHSL` instance, optionally with the given alpha.
+|===
+--
+
+
+[#hsl-white]
+=== `white(alpha?)`
+
+Creates a new, white `FoxHSL` instance, optionally with a given alpha value.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `alpha`
+| float
+| Optional alpha value to set on the new, white `FoxHSL` instance.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSL
+| A new, white `FoxHSL` instance, optionally with the given alpha.
+|===
+--
+
+
+[#hsl-from-renpy]
+=== `from_renpy_color(color)`
+
+Creates a new `FoxHSL` instance from the given Ren'Py `Color` instance.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `color`
+| Color
+| Ren'Py `Color` instance from which the new `FoxHSL` should be created.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSL
+| A new `FoxHSL` instance from the given Ren'Py `Color` instance.
+|===
+--

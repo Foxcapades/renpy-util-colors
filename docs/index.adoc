@@ -9,3 +9,7 @@
 include::includes/fox-color.adoc[leveloffset=2]
 
 include::includes/fox-hsl.adoc[leveloffset=2]
+
+include::includes/fox-hsv.adoc[leveloffset=2]
+
+include::includes/fox-rgb.adoc[leveloffset=2]

@@ -5,6 +5,82 @@
 
 == Properties
 
+* <<rgb-red>>
+* <<rgb-green>>
+* <<rgb-blue>>
+
+[#rgb-red]
+=== `red`
+
+[#rgb-green]
+=== `green`
+
+[#rgb-blue]
+=== `blue`
+
+
 == Instance Methods
 
+* <<rgb-set-red>>
+* <<rgb-set-green>>
+* <<rgb-set-blue>>
+* <<rgb-with-red>>
+* <<rgb-with-green>>
+* <<rgb-with-blue>>
+* <<rgb-with-alpha>>
+* <<rgb-with-values>>
+
+[#rgb-set-red]
+=== `set_red(red)`
+
+[#rgb-set-green]
+=== `set_green(green)`
+
+[#rgb-set-blue]
+=== `set_blue(blue)`
+
+[#rgb-with-red]
+=== `with_red(red)`
+
+[#rgb-with-green]
+=== `with_green(green)`
+
+[#rgb-with-blue]
+=== `with_blue(blue)`
+
+[#rgb-with-alpha]
+=== `with_alpha(alpha)`
+
+[#rgb-with-values]
+=== `with_values(red?, green?, blue?, alpha?)`
+
+
 == Static Methods
+
+* <<rgb-black>>
+* <<rgb-white>>
+* <<rgb-from-renpy>>
+
+[#rgb-black]
+=== `black(alpha?)`
+
+[#rgb-white]
+=== `white(alpha?)`
+
+[#rgb-from-renpy]
+=== `from_renpy_color(color)`
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
