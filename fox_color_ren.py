@@ -455,7 +455,7 @@ class FoxHSL(FoxColor):
         return FoxHSL(
             self._fix_hue(self._h - other._h),
             self._clamp_percent(self._s - other._s),
-            self._clamp_percent(self._v - other._v),
+            self._clamp_percent(self._l - other._l),
             self._clamp_percent(self._a - other._a),
         )
 
@@ -472,7 +472,7 @@ class FoxHSL(FoxColor):
         return FoxHSL(
             self._fix_hue(self._h * other._h),
             self._clamp_percent(self._s * other._s),
-            self._clamp_percent(self._v * other._v),
+            self._clamp_percent(self._l * other._l),
             self._clamp_percent(self._a * other._a),
         )
 
