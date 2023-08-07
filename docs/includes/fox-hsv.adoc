@@ -12,11 +12,35 @@
 [#hsv-hue]
 === `hue`
 
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#hsv-saturation]
 === `saturation`
 
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#hsv-value]
 === `value`
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
 
 == Instance Methods
 
@@ -31,26 +55,146 @@
 [#hsv-set-hue]
 === `set_hue(hue)`
 
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#hsv-set-saturation]
 === `set_saturation(saturation)`
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
 
 [#hsv-set-lightness]
 === `set_lightness(lightness)`
 
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#hsv-with-hue]
 === `with_hue(hue)`
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
 
 [#hsv-with-saturation]
 === `with_saturation(saturation)`
 
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#hsv-with-value]
 === `with_value(value)`
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
 
 [#hsv-with-alpha]
 === `with_alpha(alpha)`
 
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#hsv-with-values]
 === `with_values(hue?, saturation?, value?, alpha?)`
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
 
 == Static Methods
 
@@ -61,8 +205,38 @@
 [#hsv-black]
 === `black(alpha?)`
 
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#hsv-white]
 === `white(alpha?)`
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
 
 [#hsv-from-renpy]
 === `from_renpy_color(color)`

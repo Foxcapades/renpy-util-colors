@@ -12,11 +12,34 @@
 [#rgb-red]
 === `red`
 
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#rgb-green]
 === `green`
 
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#rgb-blue]
 === `blue`
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
 
 
 == Instance Methods
@@ -33,26 +56,145 @@
 [#rgb-set-red]
 === `set_red(red)`
 
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#rgb-set-green]
 === `set_green(green)`
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
 
 [#rgb-set-blue]
 === `set_blue(blue)`
 
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#rgb-with-red]
 === `with_red(red)`
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
 
 [#rgb-with-green]
 === `with_green(green)`
 
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#rgb-with-blue]
 === `with_blue(blue)`
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
 
 [#rgb-with-alpha]
 === `with_alpha(alpha)`
 
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#rgb-with-values]
 === `with_values(red?, green?, blue?, alpha?)`
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
 
 
 == Static Methods
@@ -64,8 +206,38 @@
 [#rgb-black]
 === `black(alpha?)`
 
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
+
 [#rgb-white]
 === `white(alpha?)`
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+|===
+--
+
 
 [#rgb-from-renpy]
 === `from_renpy_color(color)`
