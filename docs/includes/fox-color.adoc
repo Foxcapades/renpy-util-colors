@@ -1,5 +1,4 @@
 = `FoxColor`
-:toc: preamble
 
 The base class on which all `FoxColor` types are built.
 
