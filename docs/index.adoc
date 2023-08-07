@@ -16,10 +16,10 @@ or an optional `a` character.  In practice, valid hex digits will be expected.
 
 Valid formats:
 
-* '#rgb'
-* '#rgba'
-* '#rrggbb'
-* '#rrggbbaa'
+* `#rgb`
+* `#rgba`
+* `#rrggbb`
+* `#rrggbbaa`
 
 .Arguments
 --
