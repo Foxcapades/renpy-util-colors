@@ -1,15 +1,142 @@
 = `FoxHSL`
 
+== Construction
+
+This class is constructed by providing a hue, saturation, lightness, and
+alpha values.
+
+[source, python]
+----
+FoxHSL(0, 0.0, 0.0)
+# or
+FoxHSL(0, 0.0, 0.0, 0.0)
+----
+
+=== `+__init__(hue, saturation, lightness, alpha?)+`
+
+Initializes the new FoxHSL instance with the given arguments.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `hue`
+| int
+| Hue value as an int in the inclusive range `[0 -> 360]`.  If the given value
+falls outside of that range it will be rotated back into that range keeping the
+target hue selected.  This is to allow for over-rotations or negative rotations.
+
+| `saturation`
+| float
+| Saturation value as a percent float in the inclusive range `[0.0 -> 1.0]`.  If
+the given value falls outside of that range, an exception will be raised.
+
+| `lightness`
+| float
+| Lightness value as a percent float in the inclusive range `[0.0 -> 1.0]`.  If
+the given value falls outside of that range, an exception will be raised.
+
+| `alpha`
+| float
+| Optional alpha value as a percent float in the inclusive range `[0.0 -> 1.0]`.
+If the given value falls outside of that range, an exception will be raised.
+
+Default = `1.0`
+|===
+--
+
+
 == Properties
 
 Includes all properties from <<fox-color-props,`FoxColor`>>.
+
+* <<hsl-hue>>
+* <<hsl-sat>>
+* <<hsl-lig>>
+
+
+[#hsl-hue]
+=== `hue`
+
+
+[#hsl-sat]
+=== `saturation`
+
+
+[#hsl-lig]
+=== `lightness`
+
 
 == Instance Methods
 
 Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 
+* <<hsl-set-hue>>
+* <<hsl-set-sat>>
+* <<hsl-set-lig>>
+* <<hsl-with-hue>>
+* <<hsl-with-saturation>>
+* <<hsl-with-lightness>>
+* <<hsl-with-alpha>>
+* <<hsl-with-values>>
+
+
+[#hsl-set-hue]
+=== `set_hue(hue)`
+
+Updates the target ``FoxHSL``'s hue to the given value.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `hue`
+| int
+| New hue value to set on the target `FoxHSL` instance.  This value should be an
+int in the inclusive range `[0 -> 360]`.  If it falls outside of that range, the
+value will be rotated to be within that range, keeping selected hue.
+|===
+--
+
+
+[#hsl-set-sat]
+=== `set_saturation(saturation)`
+
+
+[#hsl-set-lig]
+=== `set_lightness(lightness)`
+
+
+[#hsl-with-hue]
+=== `with_hue(hue)`
+
+
+[#hsl-with-saturation]
+=== `with_saturation(saturation)`
+
+
+[#hsl-with-lightness]
+=== `with_lightness(lightness)`
+
+
+[#hsl-with-alpha]
+=== `with_alpha(alpha)`
+
+
+[#hsl-with-values]
+=== `with_values(hue?, saturation?, lightness?, alpha?)`
+
+
 == Static Methods
 
+* <<hsl-black>>
+* <<hsl-white>>
+
+[#hsl-black]
+=== `black(alpha?)`
+
+[#hsl-white]
+=== `white(alpha?)`
 
 
 .Arguments

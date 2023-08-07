@@ -858,10 +858,12 @@ class FoxHSV(FoxColor):
     # Interpolation ############################################################
 
     def shade(self, fraction: float) -> 'FoxHSV':
-        return self.interpolate_hsv(FoxHSV.black(self._a), fraction)
+        self._require_percent('fraction', fraction)
+        return self.interpolate_hsv(FoxHSV.black(self._a), 1.0 - fraction)
 
     def tint(self, fraction: float) -> 'FoxHSV':
-        return self.interpolate_hsv(FoxHSV.white(self._a), fraction)
+        self._require_percent('fraction', fraction)
+        return self.interpolate_hsv(FoxHSV.white(self._a), 1.0 - fraction)
 
     # Conversion Methods #######################################################
 
@@ -1166,10 +1168,12 @@ class FoxRGB(FoxColor):
     # Interpolation ############################################################
 
     def shade(self, fraction: float) -> 'FoxRGB':
-        return self.interpolate_rgb(FoxRGB.black(self._a), fraction)
+        self._require_percent('fraction', fraction)
+        return self.interpolate_rgb(FoxRGB.black(self._a), 1.0 - fraction)
 
     def tint(self, fraction: float) -> 'FoxRGB':
-        return self.interpolate_rgb(FoxRGB.white(self._a), fraction)
+        self._require_percent('fraction', fraction)
+        return self.interpolate_rgb(FoxRGB.white(self._a), 1.0 - fraction)
 
     #  Helpers  ################################################################
 

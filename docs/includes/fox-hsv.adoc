@@ -1,0 +1,9 @@
+= `FoxHSV`
+
+== Construction
+
+== Properties
+
+== Instance Methods
+
+== Static Methods
