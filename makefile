@@ -20,3 +20,7 @@ build: test
 		fox_requirement_ren.py \
 		fox-color-utils-license
 	@rm fox-color-utils-license
+
+.PHONY: docs
+docs:
+	@asciidoctor -o docs/index.html docs/index.adoc
