@@ -222,6 +222,7 @@ range `[0.0 -> 1.0]`.
 * <<to-hsl>>
 * <<to-hsv>>
 * <<to-rgb>>
+* <<to-renpy>>
 
 [#interpolate-hsl]
 === `interpolate_hsl(other, fraction)`
@@ -480,7 +481,7 @@ Converts the current color to a `FoxHSL` instance.  If the color was already a
 [cols="2m,8a"]
 |===
 | `FoxHSL`
-| A `FoxHSL` instance converted from this color.
+| A `FoxHSL` instance converted from the target color.
 |===
 --
 
@@ -496,7 +497,7 @@ Converts the current color to a `FoxHSV` instance.  If the color was already a
 [cols="2m,8a"]
 |===
 | `FoxHSV`
-| A `FoxHSV` instance converted from this color.
+| A `FoxHSV` instance converted from the target color.
 |===
 --
 
@@ -512,6 +513,20 @@ Converts the current color to a `FoxRGB` instance.  If the color was already a
 [cols="2m,8a"]
 |===
 | `FoxRGB`
-| A `FoxRGB` instance converted from this color.
+| A `FoxRGB` instance converted from the target color.
+|===
+--
+
+[#to-renpy]
+=== `to_renpy_color()`
+
+Converts the target `FoxColor` into a Ren'Py `Color` instance.
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| `FoxRGB`
+| A Ren'Py `Color` instance converted from the target `FoxColor`.
 |===
 --

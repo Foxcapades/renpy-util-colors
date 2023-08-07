@@ -1515,8 +1515,9 @@ class FoxRGB(FoxColor):
 
         return int(round(h)), s, l
 
-    def _require_rgb(self, name: str, color: int) -> int:
-        self._require_numeric(name, color)
+    @staticmethod
+    def _require_rgb(name: str, color: int) -> int:
+        FoxColor._require_numeric(name, color)
         if color < 0:
             raise Exception(f'rgb color value {name} was less than 0')
         elif color > 255:
