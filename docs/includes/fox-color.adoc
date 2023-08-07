@@ -1,0 +1,517 @@
+= `FoxColor`
+:toc: preamble
+
+The base class on which all `FoxColor` types are built.
+
+.Subtypes:
+* FoxHSL
+* FoxHSV
+* FoxRGB
+
+
+== Construction
+
+This class should not be constructed directly, and attempts to do so will result
+in an exception being raised.
+
+=== `+__init__+`
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `alpha`
+| float
+| Alpha value for the color as a percent float in the inclusive range
+`[0.0 -> 1.0]`.  If the given value falls outside of that range an exception
+will be raised.
+|===
+--
+
+
+[#fox-color-props]
+== Properties
+
+* <<alpha>>
+* <<hex>>
+* <<hsl>>
+* <<hsla>>
+* <<hsv>>
+* <<hsva>>
+* <<rgb>>
+* <<rgba>>
+
+
+[#alpha]
+=== `alpha`
+
+Alpha channel value for the target color.
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| float
+| The alpha channel value for the target color as a percent float in the
+inclusive range `[0.0 -> 1.0]`.
+|===
+--
+
+
+[#hex]
+=== `hex`
+
+Hex color string.
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| str
+| The hex color string representing the current color value.
+|===
+--
+
+
+[#hsl]
+=== `hsl`
+
+Hue, saturation, and lightness values.
+
+[source, python]
+----
+h, s, l = color.hsl
+----
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| tuple[int, float, float]
+| A tuple containing the color's hue, saturation, and lightness values.  The
+hue value will be an int in the inclusive range `[0 -> 360]`.  The saturation
+and lightness values will be percent floats in the inclusive range
+`[0.0 -> 1.0]`.
+|===
+--
+
+
+[#hsla]
+=== `hsla`
+
+Hue, saturation, lightness, and alpha values.
+
+[source, python]
+----
+h, s, l, a = color.hsla
+----
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| tuple[int, float, float, float]
+| A tuple containing the color's hue, saturation, lightness, and alpha channel
+values.  The hue value will be an int in the inclusive range `[0 -> 360]`.  The
+saturation, lightness, and alpha values will be percent floats in the inclusive
+range `[0.0 -> 1.0]`.
+|===
+--
+
+
+[#hsv]
+=== `hsv`
+
+Hue, saturation, and value values.
+
+[source, python]
+----
+h, s, v = color.hsv
+----
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| tuple[int, float, float]
+| A tuple containing the color's hue, saturation, and value values.  The hue
+value will be an int in the inclusive range `[0 -> 360]`.  The saturation and
+value values will be percent floats in the inclusive range `[0.0 -> 1.0]`
+|===
+--
+
+
+[#hsva]
+=== `hsva`
+
+Hue, saturation, value, and alpha values.
+
+[source, python]
+----
+h, s, v, a = color.hsva
+----
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| tuple[int, float, float, float]
+| A tuple containing the color's hue, saturation, value, and alpha channel
+values.  The hue value will be an int in the inclusive range `[0 -> 360]`.  The
+saturation, value, and alpha values will be percent floats in the inclusive
+range `[0.0 -> 1.0]`
+|===
+--
+
+
+[#rgb]
+=== `rgb`
+
+Red, green, and blue values.
+
+[source, python]
+----
+r, g, b = color.rgb
+----
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| tuple[int, int, int]
+| A tuple containing the color's red, green, and blue values as ints in the
+inclusive range `[0 -> 255]`.
+|===
+--
+
+
+[#rgba]
+=== `rgba`
+
+Red, green, blue, and alpha values.
+
+[source, python]
+----
+r, g, b, a = color.rgba
+----
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| tuple[int, int, int, float]
+| A tuple containing the color's red, green, blue, and alpha channel values.
+The red, green, and blue values will be ints in the inclusive range
+`[0 -> 255]`.  The alpha channel value will be a percent float in the inclusive
+range `[0.0 -> 1.0]`.
+|===
+--
+
+
+[#fox-color-instance-methods]
+== Instance Methods
+
+* <<interpolate-hsl>>
+* <<interpolate-hsv>>
+* <<interpolate-rgb>>
+* <<rotate-hue-by-percent>>
+* <<rotate-hue-by-degrees>>
+* <<set-alpha>>
+* <<shade>>
+* <<tint>>
+* <<to-hsl>>
+* <<to-hsv>>
+* <<to-rgb>>
+
+[#interpolate-hsl]
+=== `interpolate_hsl(other, fraction)`
+
+Interpolates between the target `FoxColor` and the given `other` in the HSL
+color space, return a new `FoxHSL` instance as a result.  If `fraction` is
+`0.0`, the result is the same as this color, if `fraction` is `1.0`, it is the
+same as the given `other` color.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `other`
+| FoxColor
+| Other color with which to interpolate the target color.
+
+| `fraction`
+| float
+| Fraction representing how much to interpolate the colors as a percent float in
+the inclusive range `[0.0 -> 1.0]`.  For some examples, `0.0` means only the
+current color, `0.5` means halfway between the current color and the other
+color, and `1.0` means only the other color.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSL
+| A new `FoxHSL` instance representing the new interpolated color.
+|===
+--
+
+[#interpolate-hsv]
+=== `interpolate_hsv(other, fraction)`
+
+Interpolates between this `FoxColor` and the given `other` in the HSV color
+space, return a new `FoxHSV` instance as a result.  If `fraction` is `0.0`, the
+result is the same as this color, if `fraction` is `1.0`, it is the same as the
+given `other` color.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `other`
+| FoxColor
+| Other color with which to interpolate the target color.
+
+| `fraction`
+| float
+| Fraction representing how much to interpolate the colors as a percent float in
+the inclusive range `[0.0 -> 1.0]`.  For some examples, `0.0` means only the
+current color, `0.5` means halfway between the current color and the other
+color, and `1.0` means only the other color.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSV
+| A new `FoxHSV` instance representing the new interpolated color.
+|===
+--
+
+
+[#interpolate-rgb]
+=== `interpolate_rgb(other, fraction)`
+
+Interpolates between this `FoxColor` and the given `other` in the RGB color
+space, return a new `FoxRGB` instance as a result.  If `fraction` is `0.0`, the
+result is the same as this color, if `fraction` is `1.0`, it is the same as the
+given `other` color.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `other`
+| FoxColor
+| Other color with which to interpolate the target color.
+
+| `fraction`
+| float
+| Fraction representing how much to interpolate the colors as a percent float in
+the inclusive range `[0.0 -> 1.0]`.  For some examples, `0.0` means only the
+current color, `0.5` means halfway between the current color and the other
+color, and `1.0` means only the other color.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxRGB
+| A new `FoxRGB` instance representing the new interpolated color.
+|===
+--
+
+
+[#rotate-hue-by-percent]
+=== `rotate_hue_by_percent(percent)`
+
+Rotates the current color's hue value by the given percent of a rotation,
+returning a new, rotated `FoxColor` instance.  `0.0` means do not rotate at all,
+`1.0` means full 360 degree rotation.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `percent`
+| float
+| A fraction of a full rotation as a percent float in the inclusive range
+`[0.0 -> 1.0]`.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSL\|FoxHSV\|FoxRGB
+| A new, rotated `FoxColor` instance of the same type that this method was
+called on.  Meaning that, for example, if this method was called on a `FoxRGB`
+value, the returned value will also be `FoxRGB`.
+|===
+--
+
+
+[#rotate-hue-by-degrees]
+=== `rotate_hue_by_degrees(degrees)`
+
+Rotates the current color's hue value by the given number of degrees, returning
+a new, rotated `FoxColor` instance.  `0` means no rotation, while `360` is a
+full rotation.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `degrees`
+| int
+| The degrees of the rotation in the inclusive range `[0 -> 360]`.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSL\|FoxHSV\|FoxRGB
+| A new, rotated `FoxColor` instance of the same type that this method was
+called on.  Meaning that, for example, if this method was called on a `FoxRGB`
+value, the returned value will also be `FoxRGB`.
+|===
+--
+
+
+[#set-alpha]
+=== `set_alpha(alpha)`
+
+Updates the target ``FoxColor``'s alpha value to the given alpha value.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `alpha`
+| float
+| The new alpha value for the target `FoxColor` as a percent float in the
+inclusive range `[0.0 -> 1.0]`.
+|===
+--
+
+
+[#shade]
+=== `shade(fraction)`
+
+Creates a shade of this color by mixing it with black at the given percent
+fraction.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `fraction`
+| float
+| The fraction of the returned color that will be the original color as a
+percent float in the inclusive range `[0.0 -> 1.0]`.  If `fraction` is `0.0`
+then the returned new color will be black.  If `fraction` is `1.0` then the
+returned new color will be the same as the original color.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSL\|FoxHSV\|FoxRGB
+| A new shade created by mixing the current color with black.  The type of the
+returned value is dependent on the type of the `FoxColor` instance this method
+was called on.  For example, if this method is called on a `FoxRGB` instance,
+the return type will be `FoxRGB`; if this method was called on a `FoxHSL`
+instance the return type will be `FoxHSL`.
+|===
+--
+
+
+[#tint]
+=== `tint(fraction)`
+
+Creates a tint of this color by mixing it with white at the given percent
+fraction.
+
+.Arguments
+--
+[cols="2h,2m,6a"]
+|===
+| `fraction`
+| float
+| The fraction of the returned color that will be the original color as a
+percent float in the inclusive range `[0.0 -> 1.0]`.  If `fraction` is `0.0`
+then the returned new color will be white.  If `fraction` is `1.0` then the
+returned new color will be the same as the original color.
+|===
+--
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSL\|FoxHSV\|FoxRGB
+| A new shade created by mixing the current color with white.  The type of the
+returned value is dependent on the type of the `FoxColor` instance this method
+was called on.  For example, if this method is called on a `FoxRGB` instance,
+the return type will be `FoxRGB`; if this method was called on a `FoxHSL`
+instance the return type will be `FoxHSL`.
+|===
+--
+
+
+[#to-hsl]
+=== `to_hsl()`
+
+Converts the current color to a `FoxHSL` instance.  If the color was already a
+`FoxHSL` instance, that instance will be returned.
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| `FoxHSL`
+| A `FoxHSL` instance converted from this color.
+|===
+--
+
+
+[#to-hsv]
+=== `to_hsv()`
+
+Converts the current color to a `FoxHSV` instance.  If the color was already a
+`FoxHSV` instance, that instance will be returned.
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| `FoxHSV`
+| A `FoxHSV` instance converted from this color.
+|===
+--
+
+
+[#to-rgb]
+=== `to_rgb()`
+
+Converts the current color to a `FoxRGB` instance.  If the color was already a
+`FoxRGB` instance, that instance will be returned.
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| `FoxRGB`
+| A `FoxRGB` instance converted from this color.
+|===
+--

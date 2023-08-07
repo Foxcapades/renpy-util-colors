@@ -279,9 +279,37 @@ class FoxColor(object):
         raise Exception("rotate_hue_by_degrees not yet implemented")
 
     def shade(self, fraction: float) -> 'FoxColor':
+        """
+        Creates a shade of this color by mixing it with black at the given
+        percent fraction.
+
+        :param fraction: The fraction of the returned color that is the original
+        color.  If `fraction` is `0.0` then the returned new color will be
+        black.  If `fraction` is `1.0` then the returned new color will be the
+        same as the original color.
+
+        :returns:  A new shade created by mixing the current color with black.
+        The type of the returned value is dependent on the type of the FoxColor
+        instance this method was called on.  For example, if this method is
+        called on a FoxRGB instance, the return type will be FoxRGB.
+        """
         raise Exception('shade is not yet implemented')
 
     def tint(self, fraction: float) -> 'FoxColor':
+        """
+        Creates a tint of this color by mixing it with white at the given
+        percent fraction.
+
+        :param fraction: The fraction of the returned color that is the original
+        color.  If `fraction` is `0.0` then the returned new color will be
+        white.  If `fraction` is `1.0` then the returned new color will be the
+        same as the original color.
+
+        :returns:  A new tint created by mixing the current color with white.
+        The type of the returned value is dependent on the type of the FoxColor
+        instance this method was called on.  For example, if this method is
+        called on a FoxRGB instance, the return type will be FoxRGB.
+        """
         raise Exception('tint is not yet implemented')
 
     # Conversion Methods #######################################################
@@ -501,10 +529,12 @@ class FoxHSL(FoxColor):
     # Interpolation ############################################################
 
     def shade(self, fraction: float) -> 'FoxHSL':
-        return self.interpolate_hsl(FoxHSL.black(self._a), fraction)
+        self._require_percent('fraction', fraction)
+        return self.interpolate_hsl(FoxHSL.black(self._a), 1.0 - fraction)
 
     def tint(self, fraction: float) -> 'FoxHSL':
-        return self.interpolate_hsl(FoxHSL.white(self._a), fraction)
+        self._require_percent('fraction', fraction)
+        return self.interpolate_hsl(FoxHSL.white(self._a), 1.0 - fraction)
 
     #  Helpers  ################################################################
 
