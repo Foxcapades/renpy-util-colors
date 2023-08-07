@@ -611,6 +611,11 @@ class FoxHSL(FoxColor):
     def white(alpha: float = 1.0) -> 'FoxHSL':
         return FoxHSL(0, 0.0, 1.0, alpha)
 
+    @staticmethod
+    def from_renpy_color(color: Color) -> 'FoxHSL':
+        h, l, s = color.hls
+        return FoxHSL(h, s, l, color.alpha)
+
     # Creation Methods #########################################################
 
     def with_hue(self, hue: int) -> 'FoxHSL':
@@ -1000,6 +1005,11 @@ class FoxHSV(FoxColor):
     def white(alpha: float = 1.0) -> 'FoxHSV':
         return FoxHSV(0, 0.0, 1.0, alpha)
 
+    @staticmethod
+    def from_renpy_color(color: Color) -> 'FoxHSV':
+        h, s, v = color.hsv
+        return FoxHSV(h, s, v, color.alpha)
+
     # Copy Methods #############################################################
 
     def with_hue(self, hue: int) -> 'FoxHSV':
@@ -1342,6 +1352,11 @@ class FoxRGB(FoxColor):
     @staticmethod
     def white(alpha: float = 1.0) -> 'FoxRGB':
         return FoxRGB(255, 255, 255, alpha)
+
+    @staticmethod
+    def from_renpy_color(color: Color) -> 'FoxRGB':
+        r, g, b = color.rgb
+        return FoxRGB(r, g, b, color.alpha)
 
     # Creation Methods #########################################################
 
