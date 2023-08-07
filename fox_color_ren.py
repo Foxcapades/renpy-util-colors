@@ -144,6 +144,146 @@ class FoxColor(object):
         self._require_percent('alpha', alpha)
         self._a = alpha
 
+    #  INTERPOLATION  ##########################################################
+
+    def interpolate_hsl(self, other: 'FoxColor', fraction: float) -> 'FoxHSL':
+        """
+        Interpolate HSL
+
+        Interpolates between this `FoxColor` and the given `other` in the HSL
+        color space, return a new `FoxHSL` instance as a result.  If `fraction`
+        is `0.0`, the result is the same as this color, if `fraction` is `1.0`,
+        it is the same as the given `other` color.
+
+        :param other: Other color with which to interpolate the current color.
+
+        :param fraction: Fraction representing how much interpolation as a float
+        in the inclusive range `[0.0 -> 1.0]`.  For some examples, `0.0` means
+        only the current color, `0.5` means halfway between the current color
+        and the given `other` color, and `1.0` means only the `other` color.
+
+        :returns: New `FoxHSL` instance representing the interpolated value.
+        """
+        self._require_percent('fraction', fraction)
+
+        if not isinstance(other, FoxColor):
+            raise Exception('Cannot interpolate between a FoxColor and non FoxColor value.')
+
+        this = self.hsla
+        that = other.hsla
+
+        return FoxHSL(
+            self._interpolate(this[0], that[0], fraction),
+            self._interpolate(this[1], that[1], fraction),
+            self._interpolate(this[2], that[2], fraction),
+            self._interpolate(this[3], that[3], fraction),
+        )
+
+    def interpolate_hsv(self, other: 'FoxColor', fraction: float) -> 'FoxHSV':
+        """
+        Interpolate HSV
+
+        Interpolates between this `FoxColor` and the given `other` in the HSV
+        color space, return a new `FoxHSV` instance as a result.  If `fraction`
+        is `0.0`, the result is the same as this color, if `fraction` is `1.0`,
+        it is the same as the given `other` color.
+
+        :param other: Other color with which to interpolate the current color.
+
+        :param fraction: Fraction representing how much interpolation as a float
+        in the inclusive range `[0.0 -> 1.0]`.  For some examples, `0.0` means
+        only the current color, `0.5` means halfway between the current color
+        and the given `other` color, and `1.0` means only the `other` color.
+
+        :returns: New `FoxHSV` instance representing the interpolated value.
+        """
+        self._require_percent('fraction', fraction)
+
+        if not isinstance(other, FoxColor):
+            raise Exception('Cannot interpolate between a FoxColor and non FoxColor value.')
+
+        this = self.hsva
+        that = other.hsva
+
+        return FoxHSV(
+            self._interpolate(this[0], that[0], fraction),
+            self._interpolate(this[1], that[1], fraction),
+            self._interpolate(this[2], that[2], fraction),
+            self._interpolate(this[3], that[3], fraction),
+        )
+
+    def interpolate_rgb(self, other: 'FoxColor', fraction: float) -> 'FoxRGB':
+        """
+        Interpolate RGB
+
+        Interpolates between this `FoxColor` and the given `other` in the RGB
+        color space, return a new `FoxRGB` instance as a result.  If `fraction`
+        is `0.0`, the result is the same as this color, if `fraction` is `1.0`,
+        it is the same as the given `other` color.
+
+        :param other: Other color with which to interpolate the current color.
+
+        :param fraction: Fraction representing how much interpolation as a float
+        in the inclusive range `[0.0 -> 1.0]`.  For some examples, `0.0` means
+        only the current color, `0.5` means halfway between the current color
+        and the given `other` color, and `1.0` means only the `other` color.
+
+        :returns: New `FoxRGB` instance representing the interpolated value.
+        """
+        self._require_percent('fraction', fraction)
+
+        if not isinstance(other, FoxColor):
+            raise Exception('Cannot interpolate between a FoxColor and non FoxColor value.')
+
+        this = self.rgba
+        that = other.rgba
+
+        return FoxRGB(
+            self._interpolate(this[0], that[0], fraction),
+            self._interpolate(this[1], that[1], fraction),
+            self._interpolate(this[2], that[2], fraction),
+            self._interpolate(this[3], that[3], fraction),
+        )
+
+    def rotate_hue_by_percent(self, percent: float) -> 'FoxColor':
+        """
+        Rotate Hue by Percent
+
+        Rotates the current color's hue value by the given `percent` of a
+        rotation.  `0.0` means do not rotate at all, `1.0` means full 360 degree
+        rotation.
+
+        :param percent: A fraction of a full rotation in the inclusive range
+        `[0.0 -> 1.0]`.
+
+        :returns: A new, rotated `FoxColor` instance of the same type that this
+        method was called on.  Meaning that, for example, if this method was
+        called on a `FoxRGB` value, the returned value will also be `FoxRGB`.
+        """
+        raise Exception('rotate_hue_by_percent not yet implemented')
+
+    def rotate_hue_by_degrees(self, degrees: int) -> 'FoxColor':
+        """
+        Rotate Hue by Degrees
+
+        Rotates the current color's hue value by the given number of `degrees`.
+        `0` means no rotation, while `360` is a full rotation.
+
+        :param degrees: The degrees of the rotation in the inclusive range
+        `[0 -> 360]`.
+
+        :returns: A new, rotated `FoxColor` instance of the same type that this
+        method was called on.  Meaning that, for example, if this method was
+        called on a `FoxRGB` value, the returned value will also be `FoxRGB`.
+        """
+        raise Exception("rotate_hue_by_degrees not yet implemented")
+
+    def shade(self, fraction: float) -> 'FoxColor':
+        raise Exception('shade is not yet implemented')
+
+    def tint(self, fraction: float) -> 'FoxColor':
+        raise Exception('tint is not yet implemented')
+
     # Conversion Methods #######################################################
 
     def to_rgb(self) -> 'FoxRGB':
@@ -173,6 +313,10 @@ class FoxColor(object):
         raise Exception('to_hsv not yet implemented')
 
     #  INTERNALS  ##############################################################
+
+    @staticmethod
+    def _interpolate(x: int | float, y: int | float, z: float) -> int | float:
+        return type(x)(x + (y - x) * z)
 
     @staticmethod
     def _require_numeric(name: str, value: int | float):
@@ -343,6 +487,24 @@ class FoxHSL(FoxColor):
     def to_hsv(self) -> 'FoxHSV':
         h, s, v = self._to_hsv()
         return FoxHSV(h, s, v, self._a)
+
+    # Rotation Methods #########################################################
+
+    def rotate_hue_by_percent(self, percent: float) -> 'FoxHSL':
+        self._require_percent('percent', percent)
+        return self.rotate_hue_by_degrees(round(360 * percent))
+
+    def rotate_hue_by_degrees(self, degrees: int) -> 'FoxHSL':
+        self._require_numeric('degrees', degrees)
+        return FoxHSL(self._h + degrees, self._s, self._l, self._a)
+
+    # Interpolation ############################################################
+
+    def shade(self, fraction: float) -> 'FoxHSL':
+        return self.interpolate_hsl(FoxHSL(0, 0.0, 0.0, self._a), fraction)
+
+    def tint(self, fraction: float) -> 'FoxHSL':
+        return self.interpolate_hsl(FoxHSL(0, 0.0, 1.0, self._a), fraction)
 
     # Creation Methods #########################################################
 
@@ -644,6 +806,23 @@ class FoxHSV(FoxColor):
         r, g, b = self._to_rgb()
         return r, g, b, self._a
 
+    # Rotation #################################################################
+
+    def rotate_hue_by_percent(self, percent: float) -> 'FoxHSV':
+        self._require_percent('percent', percent)
+        return self.rotate_hue_by_degrees(round(360 * percent))
+
+    def rotate_hue_by_degrees(self, degrees: int) -> 'FoxHSV':
+        self._require_numeric('degrees', degrees)
+        return FoxHSV(self._h + degrees, self._s, self._v, self._a)
+    # Interpolation ############################################################
+
+    def shade(self, fraction: float) -> 'FoxHSV':
+        return self.interpolate_hsv(FoxHSV(0, 0.0, 0.0, self._a), fraction)
+
+    def tint(self, fraction: float) -> 'FoxHSV':
+        return self.interpolate_hsv(FoxHSV(0, 0.0, 1.0, self._a), fraction)
+
     # Conversion Methods #######################################################
 
     def to_hsv(self) -> 'FoxHSV':
@@ -923,6 +1102,24 @@ class FoxRGB(FoxColor):
     def to_hsv(self) -> FoxHSV:
         h, s, v = self._to_hsv()
         return FoxHSV(h, s, v, self._a)
+
+    # Rotation Methods #########################################################
+
+    def rotate_hue_by_percent(self, percent: float) -> 'FoxRGB':
+        self._require_percent('percent', percent)
+        return self.rotate_hue_by_degrees(round(360 * percent))
+
+    def rotate_hue_by_degrees(self, degrees: int) -> 'FoxRGB':
+        self._require_numeric('degrees', degrees)
+        return self.to_hsl().rotate_hue_by_degrees(degrees).to_rgb()
+
+    # Interpolation ############################################################
+
+    def shade(self, fraction: float) -> 'FoxRGB':
+        return self.interpolate_rgb(FoxRGB(0, 0, 0, self._a), fraction)
+
+    def tint(self, fraction: float) -> 'FoxRGB':
+        return self.interpolate_rgb(FoxRGB(255, 255, 255, self._a), fraction)
 
     # Creation Methods #########################################################
 
