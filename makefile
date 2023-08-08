@@ -10,7 +10,7 @@ test:
 	@echo "Looks good to me, boss!"
 
 .PHONY: build
-build: test
+build:
 	@rm -rf build
 	@mkdir -p build
 	@cp license fox-color-utils-license
