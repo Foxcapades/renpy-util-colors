@@ -267,6 +267,8 @@ def fox_hex_is_valid(hex: str) -> bool:
         if not __is_hex_digit(c):
             return False
 
+    return True
+
 
 ################################################################################
 ##

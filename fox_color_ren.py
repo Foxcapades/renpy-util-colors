@@ -618,6 +618,9 @@ class FoxHSL(FoxColor):
 
     # Creation Methods #########################################################
 
+    def clone(self) -> 'FoxHSL':
+        return FoxHSL(self._h, self._s, self._l, self._a)
+
     def with_hue(self, hue: int) -> 'FoxHSL':
         """
         Creates a new FoxHSL value with the given hue.
@@ -1012,6 +1015,9 @@ class FoxHSV(FoxColor):
 
     # Copy Methods #############################################################
 
+    def clone(self) -> 'FoxHSV':
+        return FoxHSV(self._h, self._s, self._v, self._a)
+
     def with_hue(self, hue: int) -> 'FoxHSV':
         """
         Creates a new FoxHSV value with the given hue.
@@ -1359,6 +1365,9 @@ class FoxRGB(FoxColor):
         return FoxRGB(r, g, b, color.alpha)
 
     # Creation Methods #########################################################
+
+    def clone(self) -> 'FoxRGB':
+        return FoxRGB(self._r, self._g, self._b, self._a)
 
     def with_red(self, red: int) -> 'FoxRGB':
         """
