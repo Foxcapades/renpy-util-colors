@@ -57,6 +57,7 @@ the inclusive range `[0.0 -> 1.0]`.
 
 Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 
+* <<hsv-clone>>
 * <<hsv-set-hue>>
 * <<hsv-set-saturation>>
 * <<hsv-set-lightness>>
@@ -64,6 +65,22 @@ Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 * <<hsv-with-saturation>>
 * <<hsv-with-alpha>>
 * <<hsv-with-values>>
+
+
+[#hsv-clone]
+=== `clone()`
+
+Creates a copy of the current `FoxHSV` instance.
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSV
+| A new copy of the current `FoxHSV` instance.
+|===
+--
+
 
 [#hsv-set-hue]
 === `set_hue(hue)`

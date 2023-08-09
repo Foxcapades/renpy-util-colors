@@ -57,6 +57,7 @@ an int in the inclusive range `[0 -> 255]`.
 
 Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 
+* <<rgb-clone>>
 * <<rgb-set-red>>
 * <<rgb-set-green>>
 * <<rgb-set-blue>>
@@ -65,6 +66,22 @@ Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 * <<rgb-with-blue>>
 * <<rgb-with-alpha>>
 * <<rgb-with-values>>
+
+
+[#rgb-clone]
+=== `clone()`
+
+Creates a copy of the current `FoxRGB` instance.
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxRGB
+| A new copy of the current `FoxRGB` instance.
+|===
+--
+
 
 [#rgb-set-red]
 === `set_red(red)`

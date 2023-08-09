@@ -123,6 +123,7 @@ in the inclusive range `[0.0 -> 1.0]`.
 
 Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 
+* <<hsl-clone>>
 * <<hsl-set-hue>>
 * <<hsl-set-sat>>
 * <<hsl-set-lig>>
@@ -131,6 +132,21 @@ Includes all methods from <<fox-color-instance-methods,`FoxColor`>>
 * <<hsl-with-lightness>>
 * <<hsl-with-alpha>>
 * <<hsl-with-values>>
+
+
+[#hsl-clone]
+=== `clone()`
+
+Creates a copy of the current `FoxHSL` instance.
+
+.Returns
+--
+[cols="2m,8a"]
+|===
+| FoxHSL
+| A new copy of the current `FoxHSL` instance.
+|===
+--
 
 
 [#hsl-set-hue]
