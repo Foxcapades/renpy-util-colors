@@ -19,6 +19,7 @@
 # SOFTWARE.
 
 # From: https://github.com/Foxcapades/renpy-util-colors
+# Version: 1.2.0
 
 from fox_hex_utils_ren import fox_hex_to_ubytes, fox_ubytes_to_hex
 from fox_requirement_ren import fox_require_str
