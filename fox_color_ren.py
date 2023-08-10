@@ -19,7 +19,7 @@
 # SOFTWARE.
 
 # From: https://github.com/Foxcapades/renpy-util-colors
-# Version: 1.2.0
+# Version: 1.3.0
 
 from fox_hex_utils_ren import fox_hex_to_ubytes, fox_ubytes_to_hex
 from fox_requirement_ren import fox_require_str
@@ -314,6 +314,14 @@ class FoxColor(object):
         """
         raise Exception('tint is not yet implemented')
 
+    #  COPY METHODS  ###########################################################
+
+    def clone(self) -> 'FoxColor':
+        """
+        Clones the current `FoxColor` instance.
+        """
+        raise Exception('clone not yet implemented')
+
     # Conversion Methods #######################################################
 
     def to_rgb(self) -> 'FoxRGB':
@@ -592,7 +600,7 @@ class FoxHSL(FoxColor):
         self._require_numeric('degrees', degrees)
         return FoxHSL(self._h + degrees, self._s, self._l, self._a)
 
-    # Interpolation ############################################################
+    #  Interpolation  ##########################################################
 
     def shade(self, fraction: float) -> 'FoxHSL':
         self._require_percent('fraction', fraction)
@@ -617,7 +625,7 @@ class FoxHSL(FoxColor):
         h, l, s = color.hls
         return FoxHSL(h, s, l, color.alpha)
 
-    # Creation Methods #########################################################
+    #  Creation Methods  #######################################################
 
     def clone(self) -> 'FoxHSL':
         return FoxHSL(self._h, self._s, self._l, self._a)
